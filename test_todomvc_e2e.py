@@ -26,5 +26,3 @@ def test_e2e():
     ss('#todo-list li').element_by(have.css_class('.editing'))#.element('.edit')
     # s('#new-todo').type('11').press_enter()
     sleep(2)
-
-    1235456

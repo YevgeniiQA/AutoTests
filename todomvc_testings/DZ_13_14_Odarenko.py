@@ -1,16 +1,11 @@
 from time import sleep
 from selene import have, command
-from selene.support.shared import browser
 from selene.support.shared.jquery_style import s, ss
-
+from todomvc_testings.Model import todos
 
 
 def test_e2e():
-    browser.open('http://todomvc.com/examples/emberjs')
-    s('#new-todo').type('11').press_enter()
-    s('#new-todo').type('22').press_enter()
-    s('#new-todo').type('33').press_enter()
-    s('#new-todo').type('44').press_enter()
+    todos.given_opened('11', '22', '33', '44')
     ss('#todo-list li').should(have.exact_texts('11', '22', '33', '44'))
     ss('#todo-list li').element_by(have.exact_text('22')).element('.toggle').click()
     ss('#todo-list li').element_by(have.exact_text('33')).element('.toggle').click()

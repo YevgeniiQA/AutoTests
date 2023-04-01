@@ -12,4 +12,11 @@ class TodoMVC:
         browser.open('http://todomvc.com/examples/emberjs')
         return self
 
-    def
+    def add(self, *todos: str):
+        for todo in todos:
+            s('#new-todo').type(todo).press_enter()
+        return self
+
+    def given_opened(self, *todos: str):
+        self.open()
+        self.add(*todos)

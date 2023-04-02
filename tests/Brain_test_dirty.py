@@ -2,11 +2,18 @@ from time import sleep
 from selene import have, command
 from selene.support.shared import browser
 from selene.support.shared.jquery_style import s, ss
-from todomvc_testings.Model import todos
-
 
 def test_e2e():
-    browser.open('http://todomvc.com/examples/emberjs')
+
+    browser.open('https://brain.com.ua/ukr/')
+    browser.driver.maximize_window()
+    s('.br-th-login ').click()
+    s('#modal-login-phone-field').type('0509296973')#.press_enter()
+    # s('.form-group row').click()#.type('+380509296973').press_enter()
+    sleep(3)
+
+
+
     s('#new-todo').type('11').press_enter()
     s('#new-todo').type('22').press_enter()
     s('#new-todo').type('33').press_enter()

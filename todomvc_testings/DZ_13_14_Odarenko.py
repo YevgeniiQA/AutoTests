@@ -1,7 +1,6 @@
 from time import sleep
 from todomvc_testings.Model import todos
 
-
 def test_e2e():
     todos.given_opened('11', '22', '33', '44')
     todos.should_be('11', '22', '33', '44')

@@ -1,6 +1,4 @@
 from time import sleep
-from selene import have, command
-from selene.support.shared.jquery_style import s, ss
 from todomvc_testings.Model import todos
 
 
@@ -10,13 +8,13 @@ def test_e2e():
     todos.toggle('22')
     todos.toggle('33')
     todos.toggle('22')
-    s('[href="#/active"]').click()
+    todos.active()
     todos.should_be_active('11', '22', '44')
-    s('[href="#/completed"]').click()
+    todos.completed()
     todos.should_be_completed('33')
     todos.delete('33')
     todos.should_be_empty(0)
-    s('[href="#/"]').click()
+    todos.click()
     todos.start_editing('22', '1234')
     todos.toggle_all()
     todos.toggle('11')

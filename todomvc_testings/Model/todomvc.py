@@ -71,3 +71,12 @@ class TodoMVC:
 
     def should_be_empty(self, todo: int):
         self.todo_list.should(have.size(todo))
+
+    def active(self):
+        s('[href="#/active"]').click()
+
+    def completed(self):
+        s('[href="#/completed"]').click()
+
+    def click(self):
+        s('[href="#/"]').click()

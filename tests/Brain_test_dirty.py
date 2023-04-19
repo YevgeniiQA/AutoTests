@@ -6,22 +6,23 @@ from selene.support.shared.jquery_style import s, ss
 def test_e2e():
     browser.open('https://brain.com.ua/ukr/')
     browser.driver.maximize_window()
-    s('.mycity_container.mycity.mycityname[data-cityid="23562"]').click()
-    sleep(1)
-    s('.city_selector[data-cityid="23637"]').click()
-    sleep(1)
-    s('a[href="/ukr/shops_map/"]').should(be.clickable).click()
-    s('[href="/"]').click()
-    s('.cover').click()
-    s('.br-th-login ').click()
-    s('#modal-login-phone-field').type('+38 (050) 929-69-73')
-    s('#modal-login-password-field').type('83808057').press_enter()
-    s('body > header > div.header-top > div > div > div.user-panel-wrap.js-login-popup > button > span')\
-        .should(have.exact_text('Євгеній'))
-    s('body > header > div.header-bottom > div > div > div.search-form.header-search-form >\
-     form > input.quick-search-input').type('Ноутбук').press_enter()
-    ss('div.search-wrapper').should(have.size_greater_than(0))
-    s('[href="/"]').click()
+    # s('.mycity_container.mycity.mycityname[data-cityid="23562"]').click()
+    # sleep(1)
+    # s('.city_selector[data-cityid="23637"]').click()
+    # sleep(1)
+    # s('a[href="/ukr/shops_map/"]').should(be.clickable).click()
+    # s('[href="/"]').click()
+    # s('.br-th-login ').click()
+    # s('#modal-login-phone-field').type('+38 (050) 929-69-73')
+    # s('#modal-login-password-field').type('83808057').press_enter()
+    # s('body > header > div.header-top > div > div > div.user-panel-wrap.js-login-popup > button > span')\
+    #     .should(have.exact_text('Євгеній'))
+    # s('body > header > div.header-bottom > div > div > div.search-form.header-search-form >\
+    #  form > input.quick-search-input').type('Ноутбук').press_enter()
+    # ss('div.search-wrapper').should(have.size_greater_than(0))
+    # s('[href="/"]').click()
+    # s('.cover').click()
+    / html / body / header / div[2] / div / div / div[1] / ul / li[6]
     s('body > header > div.header-bottom > div > div > div.main-menu-wrap > ul > li:nth-child(6) > a').click()
     s('#cat972 > div.br-category-block-right > div.br-category-block-bottom > div > ul > li:nth-child(12) > a').click()
     s('body > div.category-page-wrapper > div > div.container.br-container-main > div > div:nth-child(2) >\

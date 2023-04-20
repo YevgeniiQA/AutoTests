@@ -1,3 +1,4 @@
+from time import sleep
 from Brain_testing import brain
 
 
@@ -13,9 +14,44 @@ def test_e2e():
     # # Login and check the name
     # brain.login()
     # # Search goods and verification
-    brain.search('Ноутбук')
-    brain.verif()
-    brain.st_page()
+    # brain.search('Ноутбук')
+    # # Verification search result
+    # brain.verif_sch()
+    # # Start site page
+    # brain.st_page()
+    # # Shoose network equipment
     brain.mer_obl()
+
+    brain.sh_ant_wf()
+
+    brain.sort_price()
+
+    brain.filter()
+
+    brain.verif_ftr()
+
+    brain.shoose_fst_g()
+
+    brain.buy()
+
+    brain.close_buy_win()
+
+    brain.sh_basket()
+
+    brain.verif_count_g()
+
+    brain.verif_empty_bas()
+
+    brain.user_pers_data()
+
+    brain.ch_us_ln('Тестов')
+
+    brain.user_pers_data()
+
+    brain.ch_us_ln('Тестовский')
+
+
+
+    sleep(3)
 
 

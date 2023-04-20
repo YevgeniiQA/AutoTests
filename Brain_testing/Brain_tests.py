@@ -33,9 +33,56 @@ class BrainTS:
         s('/html/body/header/div[2]/div/div/div[2]/form/input[1]').type(brain).press_enter()
         return self
 
-    def verif(self):
+    def verif_sch(self):
         ss('div.search-wrapper').should(have.size_greater_than(0))
 
     def mer_obl(self):
         s('/html/body/header/div[2]/div/div/div[1]/ul/li[6]').click()
+
+    def sh_ant_wf(self):
+        s('a[href="/ukr/category/Wi_Fi_aksesuary-c1369-396/"]').click()
+
+    def sort_price(self):
+        s('.sorm-menu-item.has-child').click()
+        s('a[href="/ukr/category/Wi_Fi_aksesuary-c1369-396/order=asc;sortby=price/"]').click()
+
+    def filter(self):
+        s('[data-filter="5047-86008847700"]').click()
+        s('[href="/ukr/category/Wi_Fi_aksesuary-c1369-396/sortby=price;order=asc;filter=5047-86008847700/"]').click()
+
+    def verif_ftr(self):
+        s('.br-sib-c').should(have.exact_text('зовнішній'))
+
+    def shoose_fst_g(self):
+        ss('.br-cont')[0].element('a').click()
+
+    def buy(self):
+        s('#br-pr-2').click()
+
+    def close_buy_win(self):
+        s('//*[@id="checkout-modal-popup"]/div/div[1]/div/div[1]/button/i').click()
+
+    def sh_basket(self):
+        s('.cart-button.user-cart-count.cart_custom_styles.not_empty').click()
+
+    def verif_count_g(self):
+        s('.cart_item_amount').should(have.exact_text('1'))
+
+    def clear_bas(self):
+        s('.clear-cart').click()
+
+    def verif_empty_bas(self):
+        s('.br-ch-block.br-cart-empty').should(have.exact_text('Ваш кошик порожній.'))
+
+    def user_pers_data(self):
+        s('.user-panel-button.active').click()
+        s('[href="/ukr/cabinet/profile/"]').click()
+
+    def ch_us_ln(self, brain: str):
+        s('#profile-lastname-input').double_click().type(brain).press_enter()
+        s('.text-center').click()
+
+    def
+
+
 

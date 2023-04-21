@@ -80,9 +80,7 @@ class BrainTS:
 
     def ch_us_ln(self, brain: str):
         s('#profile-lastname-input').double_click().type(brain).press_enter()
-        s('.text-center').click()
+        s('.close.close-cross').click()
 
-    def
-
-
-
+    def verif_us_ln(self):
+        s('#profile-lastname-input').should(have.value('Тестовский'))

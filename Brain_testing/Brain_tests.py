@@ -20,6 +20,9 @@ class BrainTS:
     def sh_map(self):
         s('a[href="/ukr/shops_map/"]').should(be.clickable).click()
 
+    def verif_count_sh(self):
+        s('.row shop-list').should(have.css_class('col-lg-4 col-md-6 col-xs-12'))
+
     def st_page(self):
         s('[href="/"]').click()
 
@@ -39,7 +42,7 @@ class BrainTS:
     def mer_obl(self):
         s('/html/body/header/div[2]/div/div/div[1]/ul/li[6]').click()
 
-    def sh_ant_wf(self):
+    def сh_ant_wf(self):
         s('a[href="/ukr/category/Wi_Fi_aksesuary-c1369-396/"]').click()
 
     def sort_price(self):
@@ -84,3 +87,8 @@ class BrainTS:
 
     def verif_us_ln(self):
         s('#profile-lastname-input').should(have.value('Тестовский'))
+
+    def user_exit(self):
+        s('.user-panel-button.active').click()
+        s('.logout').click()
+        s('.auth-popup-button').should(have.exact_text('Увійти'))

@@ -91,4 +91,4 @@ class BrainTS:
     def user_exit(self):
         s('.user-panel-button.active').click()
         s('.logout').click()
-        s('.auth-popup-button').should(have.exact_text('Увійти'))
+        s('.br-nm-block.withoutBorder.hederLoginWrapper').should(have.exact_text('Увійти'))

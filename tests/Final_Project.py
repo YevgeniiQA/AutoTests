@@ -49,5 +49,8 @@ def test_e2e():
     # Logout and verification
     brain.user_pers_data()
     brain.user_exit()
-
+    # Negative tests
+    brain.err_log()
+    brain.open()
+    brain.err_pass()
     sleep(2)

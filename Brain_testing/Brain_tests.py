@@ -92,3 +92,16 @@ class BrainTS:
         s('.user-panel-button.active').click()
         s('.logout').click()
         s('.br-nm-block.withoutBorder.hederLoginWrapper').should(have.exact_text('Увійти'))
+
+    def err_log(self):
+        s('.br-th-login ').click()
+        s('#modal-login-phone-field').type('+38 (050) 929-69')
+        s('#modal-login-password-field').type('83808057').press_enter()
+        s('.login-error').should(have.exact_text('Некоректний телефон'))
+        browser.close()
+
+    def err_pass(self):
+        s('.br-th-login ').click()
+        s('#modal-login-phone-field').type('+38 (050) 929-69-73')
+        s('#modal-login-password-field').type('838080').press_enter()
+        s('.login-error').should(have.exact_text('Некоректний пароль'))

@@ -37,7 +37,7 @@ class BrainTS:
         ss('div.search-wrapper').should(have.size_greater_than(0))
 
     def mer_obl(self):
-        s('/html/body/header/div[2]/div/div/div[1]/ul/li[6]').click()
+        s('/html/body/header/div[2]/div/div/div[1]/ul/li[7]/a').click()
 
     def сh_ant_wf(self):
         s('a[href="/ukr/category/Wi_Fi_aksesuary-c1369-396/"]').click()

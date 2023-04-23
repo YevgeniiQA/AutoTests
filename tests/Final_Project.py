@@ -1,7 +1,6 @@
 from time import sleep
 from Brain_testing import brain
 
-
 def test_e2e():
     # Open the site
     brain.open()
@@ -9,7 +8,6 @@ def test_e2e():
     brain.ch_city()
     # Show shops
     brain.sh_map()
-    # brain.verif_count_sh()
     # Start site page
     brain.st_page()
     # Login and check the name

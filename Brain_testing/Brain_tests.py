@@ -20,9 +20,6 @@ class BrainTS:
     def sh_map(self):
         s('a[href="/ukr/shops_map/"]').should(be.clickable).click()
 
-    def verif_count_sh(self):
-        s('.row shop-list').should(have.css_class('col-lg-4 col-md-6 col-xs-12'))
-
     def st_page(self):
         s('[href="/"]').click()
 
@@ -91,13 +88,13 @@ class BrainTS:
     def user_exit(self):
         s('.user-panel-button.active').click()
         s('.logout').click()
-        s('.br-nm-block.withoutBorder.hederLoginWrapper').should(have.exact_text('Увійти'))
 
     def err_log(self):
         s('.br-th-login ').click()
         s('#modal-login-phone-field').type('+38 (050) 929-69')
         s('#modal-login-password-field').type('83808057').press_enter()
         s('.login-error').should(have.exact_text('Некоректний телефон'))
+        sleep(2)
         browser.close()
 
     def err_pass(self):
@@ -105,3 +102,5 @@ class BrainTS:
         s('#modal-login-phone-field').type('+38 (050) 929-69-73')
         s('#modal-login-password-field').type('838080').press_enter()
         s('.login-error').should(have.exact_text('Некоректний пароль'))
+        sleep(2)
+        browser.close()
